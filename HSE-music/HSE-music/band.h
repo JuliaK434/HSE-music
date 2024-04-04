@@ -13,8 +13,8 @@ public:
         yearCreate = 0;
         yearBreakup = 0;
     }
-    Band(string& pseudonym, int numberAuditions, int yearCreate, int yearBreakup)
-        :Artist(pseudonym, numberAuditions) {
+    Band(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, int yearCreate, int yearBreakup)
+        :Artist(name, age, gender, pseudonym, numberAuditions) {
         this->yearCreate = yearCreate;
         this->yearBreakup = yearBreakup;
     }
