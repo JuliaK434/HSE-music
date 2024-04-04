@@ -5,7 +5,7 @@
 #include "person.h"
 
 class Artist : public Person {
-private:
+protected:
     string pseudonym;
     int numberAuditions;
 public:
@@ -19,7 +19,7 @@ public:
         this->numberAuditions = numberAuditions;
     }
    
-    string getPseudonym() {
+    virtual string getPseudonym() {
         return pseudonym;
     }
     void setPseudonym(string& pseudonym) {
