@@ -42,10 +42,10 @@ public:
     void setGender(string& gender) {
         this->gender = gender;
     }
-    ostream& operator<<(ostream& os) {
-        os << "Name: " << name;
-        return os;
-    }
+    friend ostream& operator<<(ostream& os, const Person& p);
 };
-
+ostream& operator<<(ostream& os, const Person& p) {
+    os << "Real name: " << p.name;
+    return os;
+}
 #endif //PERSON_H
