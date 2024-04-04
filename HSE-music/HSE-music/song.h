@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "artist.h"
+#include "artist.h"
 #include "person.h"
 
 class Song : public Artist {
@@ -10,7 +11,6 @@ private:
 	string title;
 	int duration;
 	int yearWriting;
-	Person* name;
 public:
 	Song() {
 		duration = 0;
@@ -21,6 +21,9 @@ public:
 		this->title = title;
 		this->duration = duration;
 		this->yearWriting = yearWriting;
+	}
+	string getPseudonym() override {
+		return string("Song`s author: ") + pseudonym;
 	}
 	string getTitle() {
 		return title;
@@ -43,8 +46,8 @@ public:
 	friend ostream& operator<<(ostream& os, const Song& s);
 };
 ostream& operator<<(ostream& os, const Song& s) {
-	os << "Title: " << s.title << ", Performed by: " << s.name;
+	os << "Title: " << s.title << ", Performed by: " << s.pseudonym;
 	return os;
 }
-	
+
 #endif //SONG_H
