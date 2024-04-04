@@ -35,6 +35,12 @@ public:
 	void setInstrument(int instrument) {
 		this->instrument = instrument;
 	}
+ friend ostream& operator<<(ostream& os, const Genre& g);
 };
+
+ostream& operator<<(ostream& os, const Genre& g) {
+    os << "Genre: " << g.name;
+    return os;
+}
 
 #endif //GENRE_H
