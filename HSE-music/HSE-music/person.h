@@ -13,6 +13,7 @@ private:
 public:
     Person();
     Person(string& name, int& age, string& gender);
+    ~Person();
     string getName();
     void setName(string& name);
     int getAge();
