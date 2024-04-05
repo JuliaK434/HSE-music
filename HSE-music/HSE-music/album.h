@@ -1,41 +1,31 @@
 #ifndef ALBUM_H
 #define ALBUM_H
+
 #include <iostream>
-#include "artist.h"
-#include "song.h"
-#include "person.h"
+#include <vector>
+#include <string>
+#include"song.h"
 
-class Album : public Song {
+class Album {
 private:
-	string album_title;
-	int num_songs;
-
+    string name;
+    vector<Song> songs;
 public:
-	Album() {
-		album_title = "None";
-		num_songs = 0;
-	}
-	Album(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, int duration, int yearWriting, string& album_title, int num_songs)
-		:Song(name, age, gender, pseudonym, numberAuditions, title, duration, yearWriting) {
-		this->album_title = album_title;
-		this->num_songs = num_songs;
-	}
-
-	string getAlbum_Title() {
-		return album_title;
-	}
-
-	void setAlbum_Title(string& album_title) {
-		this->album_title = album_title;
-	}
-
-	int getNum_songs() {
-		return num_songs;
-	}
-
-	void setNum_songs(int num_songs) {
-		this->num_songs = num_songs;
-	}
+    
+    Album(string name) : name(name) {}
+    Album& operator+(const Song& song) {
+        songs.push_back(song);
+        return *this;
+    }
+    friend ostream& operator<<(ostream& os, const Album& a);
 };
 
-#endif //SONG_H
+ostream& operator<<(ostream& os, const Album& a) {
+    os << "Album: " << a.name << "\nSongs:\n";
+    for (const auto& song : a.songs) {
+        os << "\t- " << song << "\n";
+    }
+    return os;
+}
+
+#endif //ALBUM_H
