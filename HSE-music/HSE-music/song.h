@@ -7,13 +7,14 @@
 #include "person.h"
 
 class Song : public Artist {
-private:
+protected:
 	string title;
-	double duration;
 	int yearWriting;
 public:
+	double duration;
 	Song();
 	Song(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, double duration, int yearWriting);
+	~Song();
 	string getPseudonym() override;
 	string getTitle();
 	void setTitle(string& title);
@@ -24,7 +25,7 @@ public:
 	inline friend ostream& operator<<(ostream& os, const Song& s);
 };
 ostream& operator<<(ostream& os, const Song& s) {
-	os << "Title: " << s.title << ", Performed by: " << s.pseudonym<<", Duration: "<<s.duration<<", Year writing: "<< s.yearWriting;
+	os << "Title: " << s.title << ", Performed by: " << s.pseudonym << ", Duration: " << s.duration << ", Year writing: " << s.yearWriting;
 	return os;
 }
 
