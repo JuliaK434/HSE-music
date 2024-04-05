@@ -3,25 +3,22 @@
 
 #include <iostream>
 #include <vector>
-#include <string>
 #include"song.h"
 
 class Album {
 private:
-    string name;
+    string nameA;
     vector<Song> songs;
 public:
-    
-    Album(string name) : name(name) {}
+    Album(string nameA);
     Album& operator+(const Song& song) {
         songs.push_back(song);
         return *this;
     }
-    friend ostream& operator<<(ostream& os, const Album& a);
+    inline friend ostream& operator<<(ostream& os, const Album& a);
 };
-
 ostream& operator<<(ostream& os, const Album& a) {
-    os << "Album: " << a.name << "\nSongs:\n";
+    os << "Album: " << a.nameA << "\nSongs:\n";
     for (const auto& song : a.songs) {
         os << "\t- " << song << "\n";
     }
