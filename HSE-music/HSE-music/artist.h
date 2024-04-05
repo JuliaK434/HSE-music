@@ -9,28 +9,13 @@ protected:
     string pseudonym;
     int numberAuditions;
 public:
-    Artist() {
-        pseudonym = "NO";
-        numberAuditions = 0;
-    }
-    Artist(string& name, int& age, string& gender, string& pseudonym, int numberAuditions)
-        :Person(name, age, gender) {
-        this->pseudonym = pseudonym;
-        this->numberAuditions = numberAuditions;
-    }
-   
-    virtual string getPseudonym() {
-        return pseudonym;
-    }
-    void setPseudonym(string& pseudonym) {
-        this->pseudonym = pseudonym;
-    }
-    int getNumberAuditions() {
-        return numberAuditions;
-    }
-    void setNumberAuditions(int numberAuditions) {
-        this->numberAuditions = numberAuditions;
-    }
+    Artist();
+    Artist(string& name, int& age, string& gender, string& pseudonym, int numberAuditions);
+
+    virtual string getPseudonym();
+    void setPseudonym(string& pseudonym);
+    int getNumberAuditions();
+    void setNumberAuditions(int numberAuditions);
 };
 
 #endif //ARTIST_H
