@@ -9,6 +9,7 @@ Genre::Genre(string& name, int& age, string& gender, string& pseudonym, int numb
 	this->genre_type = genre_type;
 	this->instrument = instrument;
 }
+Genre::~Genre() {};
 string Genre::getGenre_type() {
 	return genre_type;
 }
