@@ -19,7 +19,7 @@ public:
 	inline friend ostream& operator<<(ostream& os, const Genre& g);
 };
 ostream& operator<<(ostream& os, const Genre& g) {
-	os << "Genre: " << g.genre_type;
+	os << "Genre: " << g.genre_type << ", main instrument: "<<g.instrument;
 	return os;
 }
 
