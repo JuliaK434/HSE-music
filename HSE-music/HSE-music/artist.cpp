@@ -9,7 +9,8 @@ Artist::Artist(string& name, int& age, string& gender, string& pseudonym, int nu
     this->pseudonym = pseudonym;
     this->numberAuditions = numberAuditions;
 }
-string Artist:: getPseudonym() {
+Artist::~Artist() {};
+string Artist::getPseudonym() {
     return pseudonym;
 }
 void Artist::setPseudonym(string& pseudonym) {
