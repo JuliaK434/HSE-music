@@ -12,6 +12,7 @@ private:
 public:
 	Genre();
 	Genre(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, int duration, int yearWriting, string& genre_type, string& instrument);
+	~Genre();
 	string getGenre_type();
 	void setGenre_type(string& genre_type);
 	string getInstrument();
@@ -19,7 +20,7 @@ public:
 	inline friend ostream& operator<<(ostream& os, const Genre& g);
 };
 ostream& operator<<(ostream& os, const Genre& g) {
-	os << "Genre: " << g.genre_type << ", main instrument: "<<g.instrument;
+	os << "Genre: " << g.genre_type << ", main instrument: " << g.instrument;
 	return os;
 }
 
