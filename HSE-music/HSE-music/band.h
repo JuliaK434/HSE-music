@@ -11,6 +11,7 @@ private:
 public:
     Band();
     Band(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, int yearCreate, int yearBreakup);
+    ~Band();
     int getYearCreate();
     void setYearCreate(int yearCreate);
     int getBreakup();
