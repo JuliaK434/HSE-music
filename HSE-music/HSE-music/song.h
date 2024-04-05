@@ -9,14 +9,14 @@
 class Song : public Artist {
 private:
 	string title;
-	int duration;
+	double duration;
 	int yearWriting;
 public:
 	Song() {
 		duration = 0;
 		yearWriting = 0;
 	}
-	Song(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, int duration, int yearWriting)
+	Song(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, double duration, int yearWriting)
 		:Artist(name, age, gender, pseudonym, numberAuditions) {
 		this->title = title;
 		this->duration = duration;
@@ -31,10 +31,10 @@ public:
 	void setTitle(string& title) {
 		this->title = title;
 	}
-	int getDuration() {
+	double getDuration() {
 		return duration;
 	}
-	void setDuration(int duration) {
+	void setDuration(double duration) {
 		this->duration = duration;
 	}
 	int getYearWriting() {
@@ -46,7 +46,7 @@ public:
 	friend ostream& operator<<(ostream& os, const Song& s);
 };
 ostream& operator<<(ostream& os, const Song& s) {
-	os << "Title: " << s.title << ", Performed by: " << s.pseudonym;
+	os << "Title: " << s.title << ", Performed by: " << s.pseudonym<<", Duration: "<<s.duration<<", Year writing: "<< s.yearWriting;
 	return os;
 }
 
