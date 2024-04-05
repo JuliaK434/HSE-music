@@ -1,9 +1,12 @@
 #include "song.h"
 
+
+
 Song::Song() {
 	duration = 0;
 	yearWriting = 0;
 }
+Song::~Song() {}
 Song::Song(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, double duration, int yearWriting)
 	:Artist(name, age, gender, pseudonym, numberAuditions) {
 	this->title = title;
