@@ -9,6 +9,7 @@ Band::Band(string& name, int& age, string& gender, string& pseudonym, int number
     this->yearCreate = yearCreate;
     this->yearBreakup = yearBreakup;
 }
+Band::~Band() {};
 int Band::getYearCreate() {
     return yearCreate;
 }
