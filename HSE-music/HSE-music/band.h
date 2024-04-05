@@ -9,27 +9,18 @@ private:
     int yearCreate;
     int yearBreakup;
 public:
-    Band() {
-        yearCreate = 0;
-        yearBreakup = 0;
-    }
-    Band(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, int yearCreate, int yearBreakup)
-        :Artist(name, age, gender, pseudonym, numberAuditions) {
-        this->yearCreate = yearCreate;
-        this->yearBreakup = yearBreakup;
-    }
-    int getYearCreate() {
-        return yearCreate;
-    }
-    void setYearCreate(int yearCreate) {
-        this->yearCreate = yearCreate;
-    }
-    int getBreakup() {
-        return yearBreakup;
-    }
-    void setYearCreate(int yearBreakup) {
-        this->yearBreakup = yearBreakup;
-    }
+    Band();
+    Band(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, int yearCreate, int yearBreakup);
+    int getYearCreate();
+    void setYearCreate(int yearCreate);
+    int getBreakup();
+    void setYearBreakup(int yearBreakup);
+
+    inline friend ostream& operator<<(ostream& os, const Band& b);
 };
+ostream& operator<<(ostream& os, const Band& b) {
+    os << "Start band: " << b.yearCreate << ", finish (present time 0): " << b.yearBreakup;
+    return os;
+}
 
 #endif //BAND_H
