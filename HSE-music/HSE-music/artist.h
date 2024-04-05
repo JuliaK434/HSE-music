@@ -11,7 +11,7 @@ protected:
 public:
     Artist();
     Artist(string& name, int& age, string& gender, string& pseudonym, int numberAuditions);
-
+    ~Artist();
     virtual string getPseudonym();
     void setPseudonym(string& pseudonym);
     int getNumberAuditions();
