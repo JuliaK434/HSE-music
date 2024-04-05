@@ -10,39 +10,17 @@ private:
     string name;
     int age;
     string gender;
-
 public:
-    Person() {
-        name = "NO";
-        age = 0;
-        gender = "uncertain";
-    }
-    Person(string& name, int& age, string& gender) {
-        this->name = name;
-        this->age = age;
-        this->gender = gender;
-    }
+    Person();
+    Person(string& name, int& age, string& gender);
+    string getName();
+    void setName(string& name);
+    int getAge();
+    void setAge(int age);
+    string getGender();
+    void setGender(string& gender);
 
-    string getName() {
-        return name;
-    }
-    void setName(string& name) {
-        this->name = name;
-    }
-    int getAge() {
-        return age;
-    }
-
-    void setAge(int age) {
-        this->age = age;
-    }
-    string getGender() { 
-        return gender;
-    }
-    void setGender(string& gender) {
-        this->gender = gender;
-    }
-    friend ostream& operator<<(ostream& os, const Person& p);
+    inline friend ostream& operator<<(ostream& os, const Person& p);
 };
 ostream& operator<<(ostream& os, const Person& p) {
     os << "Real name: " << p.name;
