@@ -16,7 +16,7 @@ int main() {
 	cout << Egor.getPseudonym() << endl;
 	Person EgorK(name, age, gender);
 	cout << EgorK << endl;
-	Band EK(name, age,gender,pseudonim, 4500000, 2011, 0);
+	Band EK(name, age, gender, pseudonim, 4500000, 2011, 0);
 	cout << "Band: " << EK << endl;
 	string song1("LAMBO URUS");
 	string song2("PUSSY BOY");
