@@ -12,38 +12,16 @@ private:
 	double duration;
 	int yearWriting;
 public:
-	Song() {
-		duration = 0;
-		yearWriting = 0;
-	}
-	Song(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, double duration, int yearWriting)
-		:Artist(name, age, gender, pseudonym, numberAuditions) {
-		this->title = title;
-		this->duration = duration;
-		this->yearWriting = yearWriting;
-	}
-	string getPseudonym() override {
-		return string("Song`s author: ") + pseudonym;
-	}
-	string getTitle() {
-		return title;
-	}
-	void setTitle(string& title) {
-		this->title = title;
-	}
-	double getDuration() {
-		return duration;
-	}
-	void setDuration(double duration) {
-		this->duration = duration;
-	}
-	int getYearWriting() {
-		return yearWriting;
-	}
-	void setYearWriting(int yearWriting) {
-		this->yearWriting = yearWriting;
-	}
-	friend ostream& operator<<(ostream& os, const Song& s);
+	Song();
+	Song(string& name, int& age, string& gender, string& pseudonym, int numberAuditions, string& title, double duration, int yearWriting);
+	string getPseudonym() override;
+	string getTitle();
+	void setTitle(string& title);
+	double getDuration();
+	void setDuration(double duration);
+	int getYearWriting();
+	void setYearWriting(int yearWriting);
+	inline friend ostream& operator<<(ostream& os, const Song& s);
 };
 ostream& operator<<(ostream& os, const Song& s) {
 	os << "Title: " << s.title << ", Performed by: " << s.pseudonym<<", Duration: "<<s.duration<<", Year writing: "<< s.yearWriting;
